@@ -28,6 +28,32 @@
 			<blockquote>Proin placerat quam at dui condimentum cursus id eu dui. Maecenas id magna ac neque dictum faucibus in sed enim. Nullam ut lorem non ipsum sollicitudin <span id="resaltado" class="rojo amarillo">volutpat ac vitae magna</span>. Quisque molestie justo ut leo feugiat ornare. Nullam interdum diam bibendum, dignissim nunc eu, sollicitudin mi.</blockquote>
 		</p>
 
+		<h3>Formulario</h3>
+		<form>
+			<p>
+				<label for="nombre"> Nombre </label> <!--El atributo 'for' es para saber a que atributo hace referencia la etiqueta-->
+				<input type="text" name="nombre" placeholder="Escribe tu nombre"/>
+			</p>
+
+			<p>
+				<label for="descripcion">Descripcion</label>
+				<textarea name="descripcion"></textarea>
+			</p>
+
+			<input type="radio" name="genero" value="hombre">Hombre<br/>
+			<input type="radio" name="genero" value="mujer">Mujer<br/>
+			<input type="radio" name="genero" value="nada">Nada<br/>
+
+			<select name="genero2">
+				<option value="hombre">Hombre</option>
+				<option value="mujer">Mujer</option>
+				<option value="nada">Nada</option>
+			</select>
+
+			<button>Enviar formulario</button>
+
+		</form>
+
 		<h3>Listado de frutas</h3>
 		<ol>
 			<li>Manzana</li>
