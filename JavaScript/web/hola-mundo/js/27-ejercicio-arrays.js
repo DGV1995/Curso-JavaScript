@@ -35,6 +35,8 @@ getLongitud(array);
 var busqueda = parseInt(prompt("Introduce el numero que quieres buscar:", ""));
 getIndice(busqueda, array);
 
+
+//DEFINIMOS LAS FUNCIONES
 function introducirElemento(elemento, array) {
 	array.push(elemento);
 	console.log(elemento);
@@ -93,7 +95,7 @@ function getIndice(index, array) {
 		alert("El numero indicado no se encuentra en el array introducido");
 	else
 		document.write("<p>El numero " + busqueda + " ocupa el indice " + indice + " dentro del array</p>");
-	
+
 }
 
 
