@@ -29,10 +29,10 @@ var hr = document.createElement("hr");
 //var texto = todosLosDivs[2].textContent; // Igual que el innerHTML, pero este último permite modificar el texto
 //console.log(texto);
 
-for (let valor in todosLosDivs) { // Índices
-	if (typeof todosLosDivs[valor].textContent == "string") { // Comprobamos si es un texto
+for (let i in todosLosDivs) { // Índices
+	if (typeof todosLosDivs[i].textContent == "string") { // Comprobamos si es un texto
 		var parrafo = document.createElement("p"); //Creamos un párrafo
-		var texto = document.createTextNode(todosLosDivs[valor].textContent);
+		var texto = document.createTextNode(todosLosDivs[i].textContent);
 
 		parrafo.append(texto); // Añade después --> prepend() añade antes
 		seccion.append(parrafo);
@@ -44,4 +44,18 @@ seccion.append(hr);
 
 // CONSEGUIR ELEMENTOS POR SU CLASE CSS
 
+//var divsRojos = document.getElementsByClassName("rojo");
+var divsRojos = document.querySelectorAll(".rojo"); // Si ponemos querySelector(), únicamente devuelve el primer elemento que encuentra
+var divsAmarillos = document.getElementsByClassName("amarillo");
 
+for (var i in divsRojos) {
+	if (divsRojos[i].className == "rojo") 
+		divsRojos[i].style.background = "red";
+}
+
+for (let i in divsAmarillos) {
+	if (divsAmarillos[i].className == "amarillo")
+		divsAmarillos[i].style.background = "yellow";
+}
+
+console.log(divsRojos);
