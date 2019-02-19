@@ -37,12 +37,7 @@ var cadena = "texto1,texto2,texto3";
 var cadena_array = cadena.split(",");
 console.log(cadena_array);
 
-//Búsquedas
-var busqueda = lenguajes.find(function(lenguaje) {
-	return lenguaje == "PHP"; //TRUE o FALSE
-})
 
-console.log(busqueda);
 
 
 
