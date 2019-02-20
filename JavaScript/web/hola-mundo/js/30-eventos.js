@@ -26,6 +26,7 @@ window.addEventListener("load", () => { // Utilizamos esto para poder poner el s
 	// Click
 	boton.addEventListener("click", () => { 
 		cambiarColor();
+		//this.style.border = "10px solid black"; // Hago referencia al elemento al que le estoy dando click
 	}); 
 
 	// Mouse over
