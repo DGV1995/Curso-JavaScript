@@ -3,14 +3,26 @@
 	<head>
 		<meta charset="utf-8"/>
 		<title>Curso de JavaScript</title>
-		<!--<script type="text/javascript" src="js/33-json.js"></script>-->
-		<script type="text/javascript" src="js/34-localstorage.js"></script>
+		<!--<script type="text/javascript" src="js/33-json.js"></script>
+		<script type="text/javascript" src="js/34-localstorage.js"></script> -->
+		<script type="text/javascript" src="js/35-ejercicio-localstorage.js"></script>
 	</head>
 	<body>
-		<h1>JSON</h1>
-		<div id="peliculas">
-			<h2>Peliculas</h2>
-		</div>
+		<form action="" id="formulario_añadir">
+			<h1>Añade tu pelicula</h1>
+			<input type="text" id="pelicula"/>
+			<button type="submit">Guardar</button>
+		</form>
+
+		<h2>Peliculas</h2>
+			<ul id ="lista_peliculas">
+				
+			</ul>
+		<form action="" id="formulario_borrar">
+			<h1>Borra tu pelicula</h1>
+			<input type="text" id="pelicula_borrar"/>
+			<button type="submit">Borrar</button>
+		</form>
 		<div id="datos">
 			<h2>Datos</h2>
 		</div>
