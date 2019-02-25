@@ -12,16 +12,14 @@
 		<!--jQuery-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-		<!--Slider-->
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
-		<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>	
-
-		<!--MomentJS-->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/es.js"></script>
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>	
+		<!--Importamos los estilos css de jQuery UI-->
+ 		<link rel="stylesheet" href="js/jquery-ui/jquery-ui.min.css"/>
+ 		<link rel="stylesheet" href="js/jquery-ui/jquery-ui.structure.min.css"/>
+ 		<link rel="stylesheet" href="js/jquery-ui/jquery-ui.theme.min.css"/>
+ 		<script type="text/javascript" src="js/jquery-ui/jquery-ui.min.js"></script>
 
 		<!--Mis scripts-->
-		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="js/about.js"></script>
 	</head>
 
 	<body>
@@ -47,17 +45,32 @@
 				</nav>
 				<br/>
 			</header>
-			<!--Slider-->
-			<div class="galeria">
-				<div><img src="imagenes/lobo.jpg" title="Lobo"/></div>
-				<div><img src="imagenes/jirafa.jpg" title="Jirafa"/></div>
-			  	<div><img src="imagenes/tigre.jpg" title="Tigre"/></div>
-			  	<div><img src="imagenes/oso.jpg" title="Oso"/></div>
-			</div>
+
 			<!--Contenido-->
 			<section id="content">
-				<div id="posts">
-					<!--Carga de artículos desde json-->
+				<div id="box">
+					<h2>Sobre mí</h2>
+					<!--Carga acordeón-->
+					<div id="acordeon">
+						<h3>¿Quiénes somos?</h3>
+						<div>
+							<p>
+								Praesent rhoncus vitae nisl facilisis auctor. Sed vitae ornare nulla, tempus fringilla purus. Ut vitae ultricies urna. Cras accumsan justo lorem, ac sagittis mauris placerat ac. Vivamus dapibus tortor leo, eu tincidunt ex ultricies sed.
+							</p>
+						</div>
+						<h3>Nuestros servicios</h3>
+						<div>
+							<p>
+								Praesent rhoncus vitae nisl facilisis auctor. Sed vitae ornare nulla, tempus fringilla purus. Ut vitae ultricies urna. Cras accumsan justo lorem, ac sagittis mauris placerat ac. Vivamus dapibus tortor leo, eu tincidunt ex ultricies sed.
+							</p>
+						</div>
+						<h3>Nuestros clientes</h3>
+						<div>
+							<p>
+								Praesent rhoncus vitae nisl facilisis auctor. Sed vitae ornare nulla, tempus fringilla purus. Ut vitae ultricies urna. Cras accumsan justo lorem, ac sagittis mauris placerat ac. Vivamus dapibus tortor leo, eu tincidunt ex ultricies sed.
+							</p>
+						</div>
+					</div>
 				</div>
 
 				<aside id="sidebar"> <!--Barra lateral-->

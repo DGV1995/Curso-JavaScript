@@ -71,10 +71,10 @@
 	font-family: Helvetica, Arial;
 }
 
-.post h2 {
+h2 {
 	font-size: 30px;
 	color: #333;
-
+	font-family: Helvetica, Arial;
 }
 
 .post .date {
@@ -134,7 +134,9 @@
 /*Estilos compartidos*/
 form input[type="text"],
 form input[type="email"],
-form input[type="password"] {
+form input[type="password"],
+form input[type="number"],
+select {
 	padding: 5 px;
 	border-radius: 2px;
 	border: 1px solid #ccc;
@@ -142,6 +144,7 @@ form input[type="password"] {
 	height: 20px;
 	margin-bottom: 10px;
 	margin-top: 5px;
+	display: block;
 }
 
 form input[type="submit"] {
@@ -213,6 +216,49 @@ footer {
 	float: right;
 }
 
+#box {
+	width: 60%;
+	float: left;
+	margin-top: 40px;
+}
+
+#acordeon {
+	margin-top: 20px;
+}
+
+#reloj {
+	font-size: 30px;
+	font-weight: bold;
+	font-family: Helvetica, Arial;
+	color: #333;
+	border: 5px dashed #333;
+	width: 30%;
+	padding: 30px;
+	margin: 0px auto;
+	text-align: center;
+}
+
+#form_contact {
+	font-family: Helvetica, Arial;
+	width: 50%;
+	margin-top: 15px;
+}
+
+#form_contact label {
+	width: 100%;
+	display: block;
+	margin-top: 5px;
+}
+
+.form-error {
+	float: right;
+    font-size: 13px;
+    background: red;
+    color: white;
+    padding: 10px;
+    width: 65%;
+    text-align: center;
+}
 
 
 
