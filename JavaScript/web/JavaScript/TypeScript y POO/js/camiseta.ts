@@ -1,6 +1,11 @@
+// Interfaz
+interface CamisetaBase {
+	setColor(color);
+	getColor();
+}
 
 // Clase (molde del objeto)
-class Camiseta {
+ class Camiseta implements CamisetaBase {
 
 	// Propiedades (características del objeto)
 	private color: string;
@@ -10,7 +15,7 @@ class Camiseta {
 	private precio: number;
 
 	// Métodos
-	Constructor(color, modelo, marca, talla, precio) {
+	constructor(color, modelo, marca, talla, precio) {
 		this.color = color;
 		this.modelo = modelo;
 		this.marca = marca;
@@ -26,11 +31,6 @@ class Camiseta {
 
 }
 
-
-var camiseta = new Camiseta();
-camiseta.setMarca("Adidas");
-console.log("La marca de la camiseta es: " + camiseta.getMarca());
-
-var camiseta2 = new Camiseta("Azul", "Manga corta", "Nike", "M", 45);
-console.log(camiseta2);
+var camiseta = new Camiseta("Azul", "Manga corta", "Nike", "M", 45);
+console.log(camiseta);
 

@@ -1,15 +1,13 @@
 // Clase (molde del objeto)
 var Camiseta = /** @class */ (function () {
-    function Camiseta() {
-    }
     // Métodos
-    Camiseta.prototype.Constructor = function (color, modelo, marca, talla, precio) {
+    function Camiseta(color, modelo, marca, talla, precio) {
         this.color = color;
         this.modelo = modelo;
         this.marca = marca;
         this.talla = talla;
         this.precio = precio;
-    };
+    }
     Camiseta.prototype.setMarca = function (marca) {
         this.marca = marca;
     };
@@ -18,8 +16,5 @@ var Camiseta = /** @class */ (function () {
     };
     return Camiseta;
 }());
-var camiseta = new Camiseta();
-camiseta.setMarca("Adidas");
-console.log("La marca de la camiseta es: " + camiseta.getMarca());
-var camiseta2 = new Camiseta("Azul", "Manga corta", "Nike", "M", 45);
-console.log(camiseta2);
+var camiseta = new Camiseta("Azul", "Manga corta", "Nike", "M", 45);
+console.log(camiseta);
