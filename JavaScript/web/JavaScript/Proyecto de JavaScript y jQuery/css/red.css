@@ -1,0 +1,16 @@
+body {
+	background: url("../imagenes/fuego.jpg");
+	background-attachment:  fixed;
+}
+
+#logo {
+	background: #CA3413;
+}
+
+#menu ul li:hover { /*Cuando pasemos por cualquier elemento 'li'*/
+	background: #CA3413;
+}
+
+.button-more {
+	background: #CA3413;
+}
