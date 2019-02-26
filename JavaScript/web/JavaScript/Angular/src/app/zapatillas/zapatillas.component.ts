@@ -10,15 +10,18 @@ export class ZapatillasComponent implements OnInit {
 	public titulo: string = "Componente de zapatillas";
 	public zapatillas: Array<Zapatilla>;
 	public marcas: string[];
+	public color: string;
+	public mi_marca: string;
 
 	constructor() {
+		this.color = "yelow";
+		this.marcas = new Array();
 		this.zapatillas = [
 			new Zapatilla("Nike AirForce1", "Nike", "Blanco", 100, true),
 			new Zapatilla("Adidas Superstars", "Adidas", "Blanco", 110, false),
 			new Zapatilla("Reebok Nano 5.0", "Reebok", "Gris", 85, true),
 			new Zapatilla("Nike AirMax", "Nike", "Rojo", 130, false)
-		];
-		this.marcas = new Array();
+		];	
 	}
 
 	ngOnInit() {
@@ -32,6 +35,19 @@ export class ZapatillasComponent implements OnInit {
 				this.marcas.push(element.marca);
 		})
 		console.log(this.marcas);
+	}
+
+	getMarca() {
+		alert(this.mi_marca);
+	}
+
+	addMarca() {
+		this.marcas.push(this.mi_marca);
+	}
+
+	borrarMarca(indice) {
+		//delete this.marcas[indice];
+		this.marcas.splice(indice, 1); //Borra 1 elemento a partir del índice reibido como parámetro
 	}
 
 }

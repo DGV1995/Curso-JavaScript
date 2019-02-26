@@ -1,7 +1,17 @@
 <h2>{{titulo}}</h2>
+<p>Añadir marca:</p>
+<p>
+	<!--Asignamos dinámicamente el valor introducido en el input a la variable 'mi_marca'-->
+	<input type="text" [(ngModel)]="mi_marca"/>
+	<button (click)="getMarca()">Mostrar</button>
+	<button (click)="addMarca()">Añadir marca</button>
+</p>
+<strong>{{mi_marca}}</strong>
 <p>Compra las zapatillas de las mejores marcas</p>
 <ul>
-	<li *ngFor="let marca of marcas">{{marca}}</li>
+	<li *ngFor="let marca of marcas">{{marca}}
+		<button (click)="borrarMarca(indice)">Borrar</button>
+	</li>
 </ul>
 <p>Modelos disponibles:</p>
 <ul>
@@ -20,5 +30,23 @@
 		> ¡EN OFERTA!
 		</span>
 		
+	</li>
+</ul>
+
+<p>El color de la mayoría de nuestras zapatillas es:</p>
+<input type="text" [(ngModel)]="color"/>
+<!--Directiva switch case-->
+<ul [ngSwitch]="color">
+	<li *ngSwitchCase="'yellow'">
+		<span [ngStyle]="{background:'yellow'}">Amarillo</span>
+	</li>
+	<li *ngSwitchCase="'red'">
+		<span [ngStyle]="{background:'red'}">Rojo</span>
+	</li>
+	<li *ngSwitchCase="'blue'">
+		<span [ngStyle]="{background:'blue'}">Azul</span>
+	</li>
+	<li *ngSwitchCase="'orange'">
+		<span [ngStyle]="{background:'orange'}">Naranja</span>
 	</li>
 </ul>
