@@ -2,7 +2,7 @@
 <p>Añadir marca:</p>
 <p>
 	<!--Asignamos dinámicamente el valor introducido en el input a la variable 'mi_marca'-->
-	<input type="text" [(ngModel)]="mi_marca"/>
+	<input type="text" [(ngModel)]="mi_marca" (blur)="onBlur()" (keyup.enter)="mostrarPalabra()"/>
 	<button (click)="getMarca()">Mostrar</button>
 	<button (click)="addMarca()">Añadir marca</button>
 </p>
@@ -22,7 +22,12 @@
 							'text-decoration': !zapatilla.stock ? 'line-through' : 'none'
 						  }"
 		>
-			{{zapatilla.nombre}} - <strong>{{zapatilla.precio}}€</strong>
+			{{zapatilla.nombre}} - <strong [class.altoPrecio] = "zapatilla.precio >= 80"
+										   [ngClass]="{
+										   				'fondoRojo': zapatilla.precio > 100, 
+										   				'subrayado': zapatilla.marca == 'Nike'
+										   			  }"
+									>{{zapatilla.precio}}€</strong>
 		</span>
 		<span *ngIf="zapatilla.precio <= 100" 
 			  [style.background] = "zapatilla.precio <= 90 ? 'green' : 'transparent' "
@@ -41,12 +46,12 @@
 		<span [ngStyle]="{background:'yellow'}">Amarillo</span>
 	</li>
 	<li *ngSwitchCase="'red'">
-		<span [ngStyle]="{background:'red'}">Rojo</span>
+		<span [ngStyle]="{background:'red', color:'white'}">Rojo</span>
 	</li>
 	<li *ngSwitchCase="'blue'">
-		<span [ngStyle]="{background:'blue'}">Azul</span>
+		<span [ngStyle]="{background:'blue', color:'white'}">Azul</span>
 	</li>
 	<li *ngSwitchCase="'orange'">
-		<span [ngStyle]="{background:'orange'}">Naranja</span>
+		<span [ngStyle]="{background:'orange', color:'white'}">Naranja</span>
 	</li>
 </ul>

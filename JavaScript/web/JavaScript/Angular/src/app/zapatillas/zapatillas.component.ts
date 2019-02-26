@@ -14,7 +14,7 @@ export class ZapatillasComponent implements OnInit {
 	public mi_marca: string;
 
 	constructor() {
-		this.color = "yelow";
+		this.color = "yellow";
 		this.marcas = new Array();
 		this.zapatillas = [
 			new Zapatilla("Nike AirForce1", "Nike", "Blanco", 100, true),
@@ -48,6 +48,16 @@ export class ZapatillasComponent implements OnInit {
 	borrarMarca(indice) {
 		//delete this.marcas[indice];
 		this.marcas.splice(indice, 1); //Borra 1 elemento a partir del índice reibido como parámetro
+	}
+
+	// Cuando hago click fuera del input
+	onBlur() {
+		console.log("Has salido del input");
+	}
+
+	// Cuando pulso la letra enter en el input
+	mostrarPalabra() {
+		alert(this.mi_marca);
 	}
 
 }
