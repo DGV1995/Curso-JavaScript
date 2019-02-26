@@ -9,7 +9,7 @@ import { Component, OnInit, DoCheck, OnDestroy } from "@angular/core";
 export class VideojuegoComponent implements OnInit, DoCheck, OnDestroy {
 
 	constructor() {
-		console.log("Se ha cargado el componente videojuego.component.ts");
+		//console.log("Se ha cargado el componente videojuego.component.ts");
 		this.titulo = "Componente de videojuegos"
 		this.listado = "Listado de juegos más populares"
 	}
@@ -19,12 +19,12 @@ export class VideojuegoComponent implements OnInit, DoCheck, OnDestroy {
 
 	// Este método se ejcutado inmediatamente después del constructor
 	ngOnInit() {
-		console.log("OnInit ejecutado");
+		//console.log("OnInit ejecutado");
 	}
 
 	// Este método se ejecutada cada vez que se realiza algún cambio en el componente o en la aplicación de angular
 	ngDoCheck() {
-		console.log("DoCheck ejecutado");
+		//console.log("DoCheck ejecutado");
 	}
 
 	// Este método se ejecuta cuando se vaya a eliminar el componente
