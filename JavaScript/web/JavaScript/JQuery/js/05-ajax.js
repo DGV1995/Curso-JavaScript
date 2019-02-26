@@ -55,7 +55,7 @@ $(document).ready(function() {
 			error: function() {
 				console.log("Ha ocurrido un error");
 			},
-			timeout: 10000 // Tiempo que quiero que tarde como máximo la acción en realizarse (2 segundos en este caso)
+			timeout: 2000 // Tiempo que quiero que tarde como máximo la acción en realizarse (2 segundos en este caso)
 
 		});
 	
