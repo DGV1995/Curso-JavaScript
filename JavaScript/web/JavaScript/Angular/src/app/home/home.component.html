@@ -1,3 +1,16 @@
-<p>
-  home works!
-</p>
+<h2>Página principal</h2>
+
+<div *ngIf="identificado; then siIdentificado; else noIdentificado">	
+</div>
+
+<!--Si se cumple la condición 'if', se crea esta plantilla como una variable-->
+<ng-template #siIdentificado>
+	<h3>Estás identificado en la aplicación</h3>
+	<button (click)="logOut()">Log out</button>
+</ng-template>
+
+<!--Si se cumple la condición 'else', se crea esta plantilla como una variable-->
+<ng-template #noIdentificado>
+	<p>No estás identificado, pulsa este botón para identificarte</p>
+	<button (click)="setIdentificado()">Identifícate</button>
+</ng-template>

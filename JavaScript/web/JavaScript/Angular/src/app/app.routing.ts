@@ -10,10 +10,12 @@ import { CursosComponent } from "./cursos/cursos.component";
 
 // Array de configuración de las rutas
 const appRoutes: Routes = [
-	{path: "", component: HomeComponent},
+	{path: "home", component: HomeComponent},
 	{path: "zapatillas", component: ZapatillasComponent},
 	{path: "videojuego", component: VideojuegoComponent},
 	{path: "cursos", component: CursosComponent},
+	{path: "cursos/:nombre", component: CursosComponent},
+	{path: "cursos/:nombre/:followers", component: CursosComponent},
 	/*Ruta de error 404 --> siempre la última!*/
 	{path: "**", component: HomeComponent}
 ];
