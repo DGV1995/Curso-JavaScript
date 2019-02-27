@@ -5,16 +5,16 @@ interface CamisetaBase {
 }
 
 // Decorador
-function estampar(logo: string) {
+/*function estampar(logo: string) {
 	return function(target: Function) {
 		target.prototype.estampacion = function(): void {
 			console.log("camiseta estampada con el logo de " + logo);
 		}
 	}
-}
+}*/
 
 // Clase (molde del objeto)
-@estampar("Nike")
+//@estampar("Nike")
  class Camiseta implements CamisetaBase {
 
 	// Propiedades (características del objeto)
@@ -63,7 +63,7 @@ class Sudadera extends Camiseta {
 
 var camiseta = new Camiseta("Azul", "Manga corta", "Nike", "M", 45);
 console.log(camiseta);
-camiseta.estampacion();
+//camiseta.estampar();
 
 var sudadera = new Sudadera("Rojo", "Marca larga", "Adidas", "L", 60);
 sudadera.setCapucha(true);
