@@ -1,4 +1,14 @@
-class Coche {
+interface Vehiculo {
+
+	setColor(color: string);
+	setModelo(modelo: string);
+
+	getColor(): string;
+	getModelo(): string;
+
+}
+
+class Coche implements Vehiculo {
 
 	/*private color: string;
 	private modelo: string;
@@ -10,9 +20,9 @@ class Coche {
 
 	// Ahorrar codigo
 	constructor(
-		private color: string,
-		private modelo: string,
-		private velocidad: number = 0
+		protected color: string,
+		protected modelo: string,
+		protected velocidad: number = 0
 	){}
 
 	public setColor(color: string) {
