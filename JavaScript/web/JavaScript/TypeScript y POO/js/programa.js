@@ -17,6 +17,29 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+// Módulo
+var Tienda;
+(function (Tienda) {
+    var Ropa = /** @class */ (function () {
+        function Ropa(titulo) {
+            this.titulo = titulo;
+            alert(titulo);
+        }
+        return Ropa;
+    }());
+    Tienda.Ropa = Ropa;
+    var Informatica = /** @class */ (function () {
+        function Informatica(titulo) {
+            this.titulo = titulo;
+            alert("Tienda de tecnología " + titulo);
+        }
+        return Informatica;
+    }());
+    Tienda.Informatica = Informatica;
+})(Tienda || (Tienda = {}));
+var Informatica = Tienda.Informatica;
+var cargar_informatica = new Informatica("The Phone House");
+// Decorador
 function arranque(lanzar) {
     return function (target) {
         target.prototype.lanzamiento = function () {

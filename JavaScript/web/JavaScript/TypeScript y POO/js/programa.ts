@@ -1,3 +1,28 @@
+// Módulo
+module Tienda {
+	export class Ropa {
+		constructor(
+			public titulo: string
+		) { 
+			alert(titulo);
+		}
+	}
+
+	export class Informatica {
+		constructor(
+			public titulo: string
+		) {
+			alert("Tienda de tecnología " + titulo);
+		}
+	}
+}
+
+import Informatica = Tienda.Informatica;
+
+let cargar_informatica = new Informatica("The Phone House");
+
+
+// Decorador
 function arranque(lanzar: string) {
 	return function(target: function) {
 		target.prototype.lanzamiento = function(): void {
