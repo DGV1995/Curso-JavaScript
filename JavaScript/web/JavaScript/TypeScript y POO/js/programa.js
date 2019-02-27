@@ -11,6 +11,20 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+function arranque(lanzar) {
+    return function (target) {
+        target.prototype.lanzamiento = function () {
+            alert(lanzar);
+        };
+    };
+}
+// A la clase a la que le añadamos este decorador, se le añade un nuevo método llamado 'lanzamiento'
 // Clase padre
 var Programa = /** @class */ (function () {
     function Programa(nombre, version) {
@@ -35,6 +49,9 @@ var Programa = /** @class */ (function () {
     Programa.prototype.getVersion = function () {
         return this.version;
     };
+    Programa = __decorate([
+        arranque("Lanzamiento del curso de NodeJS y Angular") // --> Le añade el método a la clase 'Programa'
+    ], Programa);
     return Programa;
 }());
 // Clase hija
@@ -56,9 +73,25 @@ var editorVideo = /** @class */ (function (_super) {
     };
     return editorVideo;
 }(Programa));
+var programa = new Programa("Sony Vegas", 1);
+programa.lanzamiento();
 var editor = new editorVideo("OSCANN Desk 100", 1, 3000);
 console.log(editor.getAllData());
 editor.setNombre("Camtasia Studio");
 editor.setVersion(8);
 editor.setTimeline(4000);
 console.log(editor.getAllData());
+// Lógica del formulario
+var programas;
+var boton = document.getElementById("boton");
+function guardar() {
+    var nombre = document.getElementById("nombre").value.toString();
+    var programa = new Programa(nombre, 1);
+    programas.push(programa);
+    var list = "";
+    for (var i = 0; i < programas.length; i++) {
+        list += "<li>" + programas[i].getNombre() + "</li>";
+    }
+    var listado = document.getElementById("listado");
+    listado.innerHTML = list;
+}
