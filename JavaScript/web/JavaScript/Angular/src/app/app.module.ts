@@ -26,6 +26,8 @@ import { ExternoComponent } from './externo/externo.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    //Importante para que funcione el cambio de páginas
+    routing,
     HttpClientModule
   ],
   providers: [
