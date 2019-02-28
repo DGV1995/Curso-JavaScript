@@ -9,7 +9,7 @@ var bodyParser = require("body-parser");
 var app = express();
 
 // Cargar archivos de rutas
-
+var project_routes = require("./routes/project");
 
 // Configuración de middlewares
 app.use(bodyParser.urlencoded({extended: false}));
@@ -19,23 +19,7 @@ app.use(bodyParser.json()); // Cualquier tipo de petición que me llegue, lo con
 
 
 // Cargar rutas
-app.get("/", (request, response) => {
-	response.status(200).send("<h1>Página de inicio</h1>");
-});
-
-app.get("/test", (request, response) => {
-	response.status(200).send({
-		message: "Hola mundo desde mi API de NodeJS"
-	});
-});
-
-app.post("/test", (request, response) => {
-	console.log(request.body.nombre + " " + request.body.apellidos);
-
-	response.status(200).send(
-		console.log("POST realizado correctamente"),
-	);
-});
+app.use("/api", project_routes);
 
 // Exportar
 module.exports = app;

@@ -8,8 +8,9 @@ var ProjectSchema = Schema({
 	name: String,
 	description: String,
 	category: String,
-	langs: [String],
-	year: Number
+	langs: String,
+	year: Number,
+	image: String
 })
 
 // Cojo este esquema y lo utilizo como modelo
