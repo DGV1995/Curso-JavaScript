@@ -13,10 +13,18 @@ export class ExternoComponent implements OnInit {
   public userId: any;
   public fecha: any;
 
+  public new_user: any;
+  public usuario_guardado: any;
+
   constructor(
   	private _peticionesServices: PeticionesService
   ) { 
-    this.userId = 1;
+      this.userId = 1;
+      this.new_user = {
+        "name": "morpheus",
+        "job": "leader"
+      };
+      this.usuario_guardado = false;
   }
 
   ngOnInit() {
@@ -25,7 +33,9 @@ export class ExternoComponent implements OnInit {
   }
 
   cargaUsuario() {
+
       this.user = false;
+      // El método subscribe me recoge la información que devuelve la petición AJAX
       this._peticionesServices.getUser(this.userId).subscribe(
         // Función de callback que se ejecuta en el caso de que todo funciones bien
         result => {
@@ -35,8 +45,23 @@ export class ExternoComponent implements OnInit {
         error => {
           console.log(<any>error);
         }
-      );
-  	
+      );	
+
+  }
+
+  onSubmit(form) {
+
+    this._peticionesServices.addUser(this.new_user).subscribe(
+      result => {
+        this.usuario_guardado = result;
+        console.log(this.usuario_guardado);
+        form.reset();
+      },
+      error => {
+        console.log(<any>error);
+      }
+    );
+
   }
 
 }

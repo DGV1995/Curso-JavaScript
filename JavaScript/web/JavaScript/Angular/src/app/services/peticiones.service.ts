@@ -18,4 +18,13 @@ export class PeticionesService {
 	getUser(userId): Observable<any> {
 		return this._http.get(this.url + "api/users/" + userId);
 	}
+
+	// Petición AJAX con el método POST
+	addUser(user): Observable<any> {
+		let params = JSON.stringify(user);
+		// Indicamos las cabeceras
+		let headers = new HttpHeaders().set("Content-Type", "application/json");
+
+		return this._http.post(this.url + "api/users", params, {headers: headers});
+	}
 }
