@@ -1,0 +1,42 @@
+<h2>Contacto</h2>
+
+<!--Pongo un nombre al formulario con la '#' e indico que es un formulario de Angular con el 'ngForm'-->
+<!--Cuando se lanza el evento 'submit' del formulario, se ejecuta la función 'onSubmit()'-->
+<form #formContacto="ngForm" (ngSubmit)="onSubmit(formContacto)">
+
+	<!--Con la directiva 'required' hacemos la validación-->
+	<label for="nombre">Nombre</label> <br/>
+	<input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="usuario.nombre" 
+		required pattern="[a-zA-Z]+"/>
+	<!--Si el nombre ha sido marcado y el valor introducido no es válido (si tiene algún caracter distinto a una letra)--> 
+	<span *ngIf="nombre.touched && !nombre.valid" [ngStyle]="{color: 'red'}">
+		* Formato inválido
+	</span>
+	<br/>
+
+	<label for="apellidos">Apellidos</label> <br/>
+	<input type="text" name="apellidos" #apellidos="ngModel" [(ngModel)]="usuario.apellidos" 
+		required pattern="[a-zA-Z]+"/> 
+	<span *ngIf="apellidos.touched && !apellidos.valid" [ngStyle]="{color: 'red'}">
+		* Formato inválido
+	</span>
+	<br/>
+
+	<label for="email">Email</label> <br/>
+	<input type="email" name="email" #email="ngModel" [(ngModel)]="usuario.email" required/> 
+	<span *ngIf="email.touched && !email.valid" [ngStyle]="{color: 'red'}">
+		* Formato inválido
+	</span>
+	<br/>
+
+	<label for="mensaje">Mensaje</label> <br/>
+	<textarea name="mensaje" #mensaje="ngModel" [(ngModel)]="usuario.mensaje" required></textarea> 
+	<span *ngIf="mensaje.touched && !mensaje.valid" [ngStyle]="{color: 'red'}">
+		* Este campo debe estar relleno
+	</span>
+	<br/>
+
+	<!--El botón de deshabilita cuando se cumple la condición de 'disabled' (formulario inválido)-->
+	<input type="submit" value="Enviar" [disabled]="!formContacto.form.valid"/>
+
+</form>

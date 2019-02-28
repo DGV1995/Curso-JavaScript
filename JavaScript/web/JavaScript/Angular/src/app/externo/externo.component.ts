@@ -21,7 +21,7 @@ export class ExternoComponent implements OnInit {
 
   ngOnInit() {
     this.cargaUsuario();
-    this.fecha = new Date();
+    this.fecha = new Date(2019, 2, 28);
   }
 
   cargaUsuario() {
