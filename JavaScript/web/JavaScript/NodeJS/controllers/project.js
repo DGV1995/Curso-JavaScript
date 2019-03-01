@@ -1,7 +1,10 @@
 "use strict"
 
-var Project = require("../models/project");
+var Project = require("../models/project"); // Creo un objeto del modelo 'project'
 
+var fs = require("fs"); // Librería FileSystem
+
+// Creo una 'clase' controller con sus distintos métodos o servicios
 var controller = {
 
 	home: (request, response) => {
@@ -37,14 +40,10 @@ var controller = {
 
 			if (!projectStored) return response.status(404).send({message: "No se ha apodido guardar el proyecto"});
 
-			return response.status(200).send({project: projectStored})
+			return response.status(200).send({project: projectStored});
 
 		})
 
-		return response.status(200).send({
-			message: "Método saveProject",
-			project: project
-		});
 	},
 
 	// Obtener un documento de la colección
@@ -61,7 +60,7 @@ var controller = {
 
 			if (!project) return response.status(404).send({message: "El documento no existe"});
 
-			return response.status(200).send(project)
+			return response.status(200).send(project);
 
 		});
 
@@ -72,7 +71,7 @@ var controller = {
 
 		//Project.find({langs:"Python"}).exec((error, projects) => { --> Se puede poner una condición (o varias) para la búsqueda
 
-		// Project.find({}).sort("-year".exec((error, projects) => { --> Ordeno por año, de menor a mayor (de mayot a menor --> "+year")
+		// Project.find({}).sort("-year".exec((error, projects) => { --> Ordeno por año, de menor a mayor (de mayor a menor --> "+year")
 
 		Project.find({}).exec((error, projects) => { // Sin condición saca todos los documentos
 
@@ -136,15 +135,30 @@ var controller = {
 			var fileSplit = filePath.split("/");
 			fileName = fileSplit[1];
 
-			Project.findByIdAndUpdate(projectId, {image: fileName}, {new: true}, (error, projectUpdated) => {
+			var extSplit = fileName.split(".");
+			var fileExt = extSplit[1];
 
-				if (error) return response.status(500).send({message: "Error al subir la imagen"});
+			if (fileExt == "png" || fileExt == "jpg" || fileext == "jpeh" || fileExt == "gif") {
 
-				if (!projectUpdated) return response.status(404).send({message: "No hay documento para actualizar"});
+				Project.findByIdAndUpdate(projectId, {image: fileName}, {new: true}, (error, projectUpdated) => {
 
-				return response.status(200).send(projectUpdated);
+					if (error) return response.status(500).send({message: "Error al subir la imagen"});
 
-			})
+					if (!projectUpdated) return response.status(404).send({message: "No hay documento para actualizar"});
+
+					return response.status(200).send(projectUpdated);
+
+				})
+
+			}
+
+			else {
+
+				fs.unlink(filePath, error => {
+					return response.status(200).send({message: "La extensión no es válida"});
+				});
+
+			}
 
 		}
 		else
