@@ -3,7 +3,7 @@
 "use strict"
 
 var express = require("express");
-var ProjectController = require("../controllers/project");
+var ProjectController = require("../controllers/project"); // Creo un objeto del modelo
 
 var router = express.Router();
 
