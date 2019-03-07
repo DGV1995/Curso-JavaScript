@@ -20,7 +20,7 @@ app.use(bodyParser.json()); // Cualquier tipo de petición que me llegue, lo con
 app.use((request, response, next) => {
 	request.header("Access-Control-Allow-Origin", "*");
 	request.header("Access-Control-Allow-Headers", "Authorization, X-API-KEY, Origin, X-Requested-With, Conten-Type, Accept, Access-Control-Allow-Request-Method");
-	resquest.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
+	request.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
 	request.header("Allow", "GET, POST, OPTIONS, PUT, DELETE");
 	next();
 });
