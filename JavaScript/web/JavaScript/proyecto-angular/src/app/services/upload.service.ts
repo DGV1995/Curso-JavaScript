@@ -11,14 +11,14 @@ export class UploadService {
 		this.url = Global.url;
 	}
 
-	makeFileRequest(url: string, params: Array<string>, file: Array<File>, name: string) {
+	makeFileRequest(url: string, params: Array<string>, files: Array<File>, name: string) {
 
 		return new Promise(function(resolve, reject) {
 
 			var formData: any = new FormData();
-			var xhr = new XMLHttprequest();
+			var xhr = new XMLHttpRequest();
 
-			for (var i = 0; i < file.length; i++) {
+			for (var i = 0; i < files.length; i++) {
 				formData.append(name, files[i], files[i].name);
 			}
 

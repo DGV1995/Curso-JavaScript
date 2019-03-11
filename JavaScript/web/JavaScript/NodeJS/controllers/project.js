@@ -4,6 +4,8 @@ var Project = require("../models/project"); // Creo un objeto del modelo 'projec
 
 var fs = require("fs"); // Librería FileSystem
 
+var path = require("path");
+
 // Creo una 'clase' controller con sus distintos métodos o servicios
 var controller = {
 
@@ -138,7 +140,7 @@ var controller = {
 			var extSplit = fileName.split(".");
 			var fileExt = extSplit[1];
 
-			if (fileExt == "png" || fileExt == "jpg" || fileext == "jpeh" || fileExt == "gif") {
+			if (fileExt == "png" || fileExt == "jpg" || fileext == "jpeg" || fileExt == "gif") {
 
 				Project.findByIdAndUpdate(projectId, {image: fileName}, {new: true}, (error, projectUpdated) => {
 
@@ -163,6 +165,23 @@ var controller = {
 		}
 		else
 			return response.status(200).send({message: fileName});
+
+	},
+
+	getImageFile: (request, response) => {
+
+		var file = request.params.image;
+		var path_file = "./uploads/" + file;
+
+		fs.exists(path_file, exists => {
+			if (exists)
+				return response.sendFile(path.resolve(path_file));
+			else {
+				return response.status(200).send({
+					message: "No existe la imagen"
+				});
+			}
+		});
 
 	}
 

@@ -22,5 +22,6 @@ router.get("/get-projects", ProjectController.getProjects);
 router.put("/update-project/:id", ProjectController.updateProject); // En este caso, el id va a ser obligatorio para saber qué documento actualizar
 router.delete("/delete-project/:id", ProjectController.deleteProject);
 router.post("/upload-image/:id", multipartMiddleware, ProjectController.uploadImage);
+router.get("/get-image/:image", ProjectController.getImageFile);
 
 module.exports = router;
